@@ -1,0 +1,9 @@
+<h1>All posts:</h1>
+
+<% @posts.each do |post| %>
+  <div class="postWrapper">
+    <h2 class="title"><%= link_to post.title, post %></h2>
+    <p class="date"><%= time_ago_in_words(post.created_at) %> ago
+    </p>
+  </div>
+<% end %>
