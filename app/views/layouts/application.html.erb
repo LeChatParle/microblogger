@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="author" content="Jeremy Edwards" >
+		<meta name="description" content="A twitter clone!" >
+		<meta name="keywords" content="Twitter, microblog, ideasharing" >
     <title>Microblogger</title>
     <%= csrf_meta_tags %>
 
@@ -9,6 +12,25 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-expand navbar-dark fixed-top bgColorNav overflow-hidden position-fixed m06" id="ebjNav">
+      <div>
+    	   <p class="pt-1 pl-0" id="logo"><%= link_to "EBJ's Twizzer", root_path %></p>
+      </div>
+      <h4 id="newPost"><%= link_to "New Post", new_post_path %></h4>
+      <h4 id="about">About</h4>
+      <h4 id="posts"><%= link_to "Posts", root_path %></h4>
+      <h4 id="signIn">Sign in</h4>
+    </nav>
+
+    <div id="sidebar">
+      <div id="profiles">
+      </div>
+    </div>
+
+    <% flash.each do |name, msg| %>
+      <%= content_tag(:div, msg, class: "alert") %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

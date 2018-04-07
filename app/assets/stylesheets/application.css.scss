@@ -1,15 +1,4 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
  *= require_tree .
  *= require_self
  */
@@ -19,7 +8,6 @@
 
 html {
 	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
-	overflow: hidden;
 	height: 100%;
 	width: 100%;
 }
@@ -31,6 +19,14 @@ body {
 }
 
 /*Nav bar and all that resides inside of it*/
+
+#ebjNav {
+  border-radius: 0px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
 
 .bgColorNav {
 	background-color: #000000;
@@ -48,18 +44,82 @@ body {
   text-decoration: none;
 }
 
-/* Posts on page */
-
-.postWrapper {
-  background-color: #000000;
-  border-radius: 30px;
-  width: 30%;
-  margin-left: 25px;
+#signIn {
+  position: fixed;
+  right: 5px;
+  top: 5px;
   color: #FFFFFF;
 }
 
-.title, .date, h2 {
+#posts {
+  position: fixed;
+  right: 95px;
+  top: 5px;
+  color: #FFFFFF;
+}
+
+#about {
+  position: fixed;
+  right: 175px;
+  top: 5px;
+  color: #FFFFFF;
+}
+
+#newPost {
+  position: fixed;
+  right: 250px;
+  top: 5px;
+  color: #FFFFFF;
+}
+
+/* Sidebar */
+
+#sidebar {
+  position: fixed;
+  padding-top: 25px;
+  width: 300px;
+  height: 100%;
+  background-color: #0031A8;
+  z-index: -1;
+}
+
+#siteLinks {
+  position: relative;;
+  color: #FFFFFF;
+  margin-top: 100px;
+  margin-left: 100px;
+}
+
+/* Posts on page */
+
+.postWrapper {
+  position: relative;
+  background-color: #000000;
+  border-radius: 30px;
+  width: 30%;
+  margin-left: 47%;
+}
+
+#allPosts {
+  padding-top: 50px;
+}
+
+#postNew {
+  margin-top: 50px;
+  padding: 15px;
+  color: #FFFFFF;
+}
+
+#submitButton {
+  color: #000000;
+}
+
+#contPost {
+    margin-top: 300px;
+}
+
+.title, .date, .body, h2 {
   margin-left: 10px;
   padding: 10px;
-  color: #FFFFFF !important;
+  color: #FFFFFF;
 }

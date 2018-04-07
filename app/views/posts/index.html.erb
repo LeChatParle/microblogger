@@ -1,14 +1,9 @@
-
-<nav class="navbar navbar-expand navbar-dark fixed-top bgColorNav overflow-hidden position-fixed m06">
-  <div class="dropdown show">
-	   <a href="#landing" class="nav-link pt-1 pl-0" id="logo">EBJ</a>
-  </div>
-</nav>
-
-<% @posts.each do |post| %>
-  <div class="postWrapper">
-    <h2 class="title"><%= link_to post.title, post %></h2>
-    <p class="date"><%= time_ago_in_words(post.created_at) %> ago
-    </p>
-  </div>
-<% end %>
+<div id="allPosts">
+  <% @posts.each do |post| %>
+    <div class="postWrapper">
+      <h2 class="title"><%= link_to post.title, post %></h2>
+      <p class="date"><%= time_ago_in_words(post.created_at) %> ago
+      </p>
+    </div>
+  <% end %>
+<div>
