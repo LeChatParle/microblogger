@@ -2,8 +2,8 @@
   <% @posts.each do |post| %>
     <div class="postWrapper">
       <h2 class="title"><%= link_to post.title, post, style: "color: #FFFFFF" %></h2>
-      <p class="date"><%= time_ago_in_words(post.created_at) %> ago
-      </p>
+      <p class="date"><%= time_ago_in_words(post.created_at) %> ago</p>
+      <div id="line"></div>
     </div>
   <% end %>
 <div>

@@ -26,7 +26,9 @@ body {
   color: #FFFFFF;
 }
 
-.bgColorNav {background-color: #000000;}
+.bgColorNav {
+  background-color: #000000;
+}
 
 #logo {
 	color: #FFFFFF;
@@ -48,17 +50,9 @@ body {
   text-decoration: none;
 }
 
-#posts {
-  position: fixed;
-  right: 95px;
-  top: 15px;
-  color: #FFFFFF;
-  text-decoration: none;
-}
-
 #newPost {
   position: fixed;
-  right: 175px;
+  right: 95px;
   top: 15px;
   color: #FFFFFF;
   text-decoration: none;
@@ -68,35 +62,25 @@ body {
 #posts:hover {color: #FF0000;}
 #newPost:hover {color: #FF0000;}
 
-/* Sidebar */
-
-#sidebar {
-  position: fixed;
-  padding-top: 25px;
-  width: 300px;
-  height: 100%;
-  background-color: #0031A8;
-  z-index: -1;
-}
-
-#siteLinks {
-  position: relative;;
-  color: #FFFFFF;
-  margin-top: 100px;
-  margin-left: 100px;
-}
-
 // Posts on page
 
 .postWrapper {
   position: relative;
-  background-color: #000000;
   border-radius: 30px;
   width: 60%;
   margin-left: 20%;
 }
 
-#allPosts {padding-top: 50px;}
+#line {
+  height: 10px;
+  width: 100%;
+  border-bottom: 1px solid #FFFFFF;
+  position: absolute;
+}
+
+#allPosts {
+  padding-top: 50px;
+}
 
 #postNew {
   margin-top: 50px;
@@ -104,9 +88,29 @@ body {
   color: #FFFFFF;
 }
 
-.submitButton {color: #000000;}
-#contPost {margin-top: 300px;}
-p {color: #FF0000}
+.submitButton {
+	color: #000000;
+	padding: 5px;
+}
+
+#contPost {
+	margin-top: 300px;
+}
+
+p {
+	color: #000000
+}
+
+.titlePost {
+  color: #000000;
+  margin-left: 10px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+#testID {
+	color: #FFFFFF !important;
+}
 
 .title, .date, .body, #commentsDiv {
   margin-left: 10px;
@@ -114,10 +118,16 @@ p {color: #FF0000}
   color: #FFFFFF;
 }
 
+.deleteButton {
+	color: #000000;
+	text-decoration: underline;;
+}
+
 // Comments
-#commentName {
+.commentName {
   font-weight: bold;
-  font-size: 2vw;
+  font-size: 24px;
+	color: #000000;
 }
 
 #commentsDiv {margin-top: 25px;}
