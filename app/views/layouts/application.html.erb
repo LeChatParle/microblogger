@@ -14,12 +14,11 @@
   <body>
     <nav class="navbar navbar-expand navbar-dark fixed-top bgColorNav overflow-hidden position-fixed m06" id="ebjNav">
       <div>
-    	   <p class="pt-1 pl-0" id="logo"><%= link_to "Twizzer", root_path %></p>
+    	   <p><%= link_to "Twizzer", root_path, id: "logo", class: "pt-1 pl-0" %></p>
       </div>
-      <h4 id="newPost"><%= link_to "New Post", new_post_path %></h4>
-      <h4 id="about">About</h4>
-      <h4 id="posts"><%= link_to "Posts", root_path %></h4>
-      <h4 id="signIn">Sign in</h4>
+      <h4><%= link_to "New Post", new_post_path, id: "newPost" %></h4>
+      <h4><%= link_to "Posts", root_path, id: "posts" %></h4>
+      <h4><%= link_to "Sign in", root_path, id: "signIn" %></h4>
     </nav>
 
     <% flash.each do |name, msg| %>

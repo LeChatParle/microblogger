@@ -1,9 +1,6 @@
 @import "bootstrap";
 
-/*
- *= require_tree .
- *= require_self
- */
+//CSS that affects the whole site
 
 html {
 	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
@@ -12,12 +9,12 @@ html {
 }
 
 body {
-	background-color: #FF0000;
+	background-color: #7F0000;
 	height: 100%;
 	width: 100%;
 }
 
-/*Nav bar and all that resides inside of it*/
+//Nav bar and all that resides inside of it
 
 #ebjNav {
   border-radius: 0px;
@@ -29,15 +26,13 @@ body {
   color: #FFFFFF;
 }
 
-.bgColorNav {
-	background-color: #000000;
-}
+.bgColorNav {background-color: #000000;}
 
 #logo {
 	color: #FFFFFF;
 	font-weight: 900;
 	font-size: 32px;
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 #logo:hover {
@@ -48,30 +43,30 @@ body {
 #signIn {
   position: fixed;
   right: 5px;
-  top: 5px;
+  top: 15px;
   color: #FFFFFF;
+  text-decoration: none;
 }
 
 #posts {
   position: fixed;
   right: 95px;
-  top: 5px;
+  top: 15px;
   color: #FFFFFF;
-}
-
-#about {
-  position: fixed;
-  right: 175px;
-  top: 5px;
-  color: #FFFFFF;
+  text-decoration: none;
 }
 
 #newPost {
   position: fixed;
-  right: 250px;
-  top: 5px;
+  right: 175px;
+  top: 15px;
   color: #FFFFFF;
+  text-decoration: none;
 }
+
+#signIn:hover {color: #FF0000;}
+#posts:hover {color: #FF0000;}
+#newPost:hover {color: #FF0000;}
 
 /* Sidebar */
 
@@ -91,7 +86,7 @@ body {
   margin-left: 100px;
 }
 
-/* Posts on page */
+// Posts on page
 
 .postWrapper {
   position: relative;
@@ -101,9 +96,7 @@ body {
   margin-left: 20%;
 }
 
-#allPosts {
-  padding-top: 50px;
-}
+#allPosts {padding-top: 50px;}
 
 #postNew {
   margin-top: 50px;
@@ -122,7 +115,6 @@ p {color: #FF0000}
 }
 
 // Comments
-
 #commentName {
   font-weight: bold;
   font-size: 2vw;
