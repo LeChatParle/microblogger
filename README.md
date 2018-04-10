@@ -1,3 +1,11 @@
 # Microblogger
 
-This app is meant to be a Twitter like microblogger. I've just started working on this project, so it is not yet in working order.
+This app is a Twitter-like microblogger.
+
+## Features
+
+You can create an account, post comments, and see other people's Posts
+
+## Future Features
+
+I plan on adding the ability to have profiles 
