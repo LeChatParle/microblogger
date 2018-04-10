@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  #ensures user is logged in to create or delete anything
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
@@ -9,6 +10,7 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  #creates post, and if successfull, goes to post
   def create
     @post = Post.new(post_params);
 
@@ -27,6 +29,7 @@ class PostsController < ApplicationController
     find_post
   end
 
+  #allows user to edit post, then redirects to updated post
   def update
     find_post
 
@@ -37,12 +40,14 @@ class PostsController < ApplicationController
     end
   end
 
+  #deletes post, comments are deleted with post
   def destroy
     find_post
     @post.destroy
     redirect_to root_path
   end
 
+  #finds posts by id, modularized due to frequent use
   private
     def post_params
       params.require(:post).permit(:title, :body)

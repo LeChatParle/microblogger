@@ -6,6 +6,7 @@
     <p style="font-size: 10px" class="commentBody">Submitted <%= time_ago_in_words(comment.created_at) %> ago </p>
   </div>
 
+  <!--If the user is singed in, it will allow delete and edit rights-->
   <% if user_signed_in? %>
     <p><%= link_to 'Delete', [comment.post, comment], method: :delete, class: 'button', data: {confirm: 'Are you sure?'}, class: 'deleteButton' %></p>
   <% end %>

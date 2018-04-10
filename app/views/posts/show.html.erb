@@ -1,9 +1,10 @@
+<!--This page is yielded when a specific post is viewed-->
 <div id="allPosts">
   <div class="postWrapper">
     <h2><%= link_to @post.title, @post.title, class: 'titlePost noTextDeco' %></h2>
     <p class="body"><%= @post.body %></p>
 
-
+      <!--Edit and delete will only be shown if the user is auth'd-->
       <p class="date">Submitted <%= time_ago_in_words(@post.created_at) %> ago
         <% if user_signed_in? %>
           |
@@ -12,7 +13,7 @@
         <% end %>
       </p>
 
-
+    <!--line between posts-->
     <div id="line"></div>
 
     <div id="commentsDiv">
