@@ -16,14 +16,26 @@
       <div>
     	   <p><%= link_to "Twizzer", root_path, id: "logo", class: "pt-1 pl-0" %></p>
       </div>
-      <h4><%= link_to "New Post", new_post_path, id: "newPost" %></h4>
-      <h4><%= link_to "Sign in", root_path, id: "signIn" %></h4>
+      <% if user_signed_in? %>
+        <h4><%= link_to "New Post", new_post_path, id: "newPost" %></h4>
+        <h4><%= link_to "Logout", destroy_user_session_path, method: :delete, id: "signIn"  %></h4>
+      <% else %>
+        <h4><%= link_to "Sign in", new_user_session_path, id: "signIn" %></h4>
+      <% end %>
     </nav>
 
     <% flash.each do |name, msg| %>
       <%= content_tag(:div, msg, class: "alert") %>
     <% end %>
 
+    <div class="alertsDiv">
+    <% if notice %>
+      <p class="alert alert-success text-center"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger text-center"><%= alert %></p>
+    <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>

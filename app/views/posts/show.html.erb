@@ -1,22 +1,27 @@
 <div id="allPosts">
   <div class="postWrapper">
-    <h2 class="title"><%= link_to @post.title %></h2>
+    <h2><%= link_to @post.title, @post.title, class: 'titlePost noTextDeco' %></h2>
     <p class="body"><%= @post.body %></p>
 
-    <p class="date">Submitted <%= time_ago_in_words(@post.created_at) %> ago |
-      <%= link_to 'Edit', edit_post_path(@post), style: "color: #FFFFFF" %> |
-      <%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Are you sure?'}, style: "color: #FFFFFF" %>
-    </p>
+
+      <p class="date">Submitted <%= time_ago_in_words(@post.created_at) %> ago
+        <% if user_signed_in? %>
+          |
+          <%= link_to 'Edit', edit_post_path(@post), style: "color: #FFFFFF" %> |
+          <%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Are you sure?'}, style: "color: #FFFFFF" %>
+        <% end %>
+      </p>
+
 
     <div id="line"></div>
 
     <div id="commentsDiv">
       <h4><%= @post.comments.count %> Comments</h4>
-      <%= render @post.comments %>
+      <%= render @post.comments, class: "commentBody" %>
 
       <div id="line"></div>
       <h4 id="commentForm"> Join the discussion! <h4>
-        <%= render "comments/form" %>
+      <%= render "comments/form" %>
     </div>
   </div>
 </div>

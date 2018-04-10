@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+
   def index
     @posts = Post.all.order('created_at DESC')
   end
@@ -38,7 +40,7 @@ class PostsController < ApplicationController
   def destroy
     find_post
     @post.destroy
-    redirect_to root_path 
+    redirect_to root_path
   end
 
   private

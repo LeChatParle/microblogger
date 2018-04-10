@@ -3,9 +3,11 @@
     <h4 class="commentName"><%= comment.name %></h4>
     <p class="commentBody"><%= comment.body %></p>
 
-    <p style="font-size: 10px">Submitted <%= time_ago_in_words(comment.created_at) %> ago </p>
+    <p style="font-size: 10px" class="commentBody">Submitted <%= time_ago_in_words(comment.created_at) %> ago </p>
   </div>
 
-  <p><%= link_to 'Delete', [comment.post, comment], method: :delete, class:
-    'button', data: {confirm: 'Are you sure?'}, class: 'deleteButton' %></p>
+  <% if user_signed_in? %>
+    <p><%= link_to 'Delete', [comment.post, comment], method: :delete, class: 'button', data: {confirm: 'Are you sure?'}, class: 'deleteButton' %></p>
+  <% end %>
+
 </div>

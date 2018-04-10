@@ -10,18 +10,18 @@
     <div>
   <% end %>
 
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+  <p class="newPostForm">
+    <%= f.label :title, "Post title" %><br>
+    <%= f.text_field :title, class: 'form-control' %>
   </p>
 
   <p>
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
+    <%= f.label :body, "Text" %><br>
+    <%= f.text_area :body, class: 'form-control' %>
   </p>
 
-  <p id="submitButton">
-    <%= f.submit %>
+  <p>
+    <%= f.submit class: 'btn btn-default submitButton' %>
   </p>
 
 <% end %>
